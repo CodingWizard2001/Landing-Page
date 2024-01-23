@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    background-color: #fdfdfd;
+}
+.nav-bar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px ;
+}
+.logo{
+    font-size: 25px;
+    font-weight: 700;
+}
+#check{
+    display: none;
+}
+.menu{
+    display: flex;
+}
+.menu li{
+    margin: 0 25px;
+}
+.menu li a{
+    font-size: 15px;
+    color: #333;
+    position: relative;
+}
+.menu li a::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    border-radius: 20px;
+    background: linear-gradient(to right,#b14ee7,#28b9e4);
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.45s ease-in;
+}
+.menu li a:hover::after{
+    width: 4vw;
+}
+.open-btn,
+.close-btn{
+    position: absolute;
+    font-size: 20px;
+    color: #444;
+    display: none;
+}
+.open-btn{
+    top: 20px;
+    right: 30px;
+}
+.close-btn{
+    top: 20px;
+    right: 30px;
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5%;
+    padding: 15px;
+}
+.home h1{
+    font-size: 40px;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.home p{
+    font-size: 13px;
+    width: 25%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.home .btn{
+    font-size: 13px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid #777;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.home .btn i{
+    margin-left: 5px;
+    font-size: 8px;
+    color: #444;
+}
+.home img{
+    width: 450px;
+}
+/* Responsive */
+@media screen and (max-width:1080px) {
+    .home h1{
+        font-size: 40px;
+        width: 65%;
+    }
+    .home p{
+        width: 60%;
+        font-size: 13px;
+    }
+    .home img{
+        width: 350px;
+    }
+}
+@media screen and (max-width:786px) {
+    .menu{
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+        background: rgba(255,255,255,0.5);
+        backdrop-filter: blur(20px);
+        top: -1000px;
+        right: 0;
+        transition: all 0.50s ease-in-out;
+        z-index: 100;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    .menu li{
+        margin: 20px 0;
+    }
+    .open-btn,
+    .close-btn{
+        display: block;
+    }
+    #check:checked ~ .menu{
+        top: 0;
+    }
+    .home h1{
+        font-size: 30px;
+        width: 65%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .home p{
+        font-size: 13px;
+        width: 45%;
+    }
+    .home img{
+        width: 300px;
+    }
+}
+@media screen and (max-width:786px) {
+    .menu{
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+        background: rgba(255,255,255,0.5);
+        backdrop-filter: blur(20px);
+        top: -1000px;
+        right: 0;
+        transition: all 0.50s ease-in-out;
+        z-index: 100;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    .menu li{
+        margin: 20px 0;
+    }
+    .open-btn,
+    .close-btn{
+        display: block;
+    }
+    #check:checked ~ .menu{
+        top: 0;
+    }
+    .home h1{
+        font-size: 30px;
+        width: 70%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .home p{
+        font-size: 13px;
+        width: 70%;
+    }
+    .home .btn{
+        transform: scale(0.9);
+    }
+    .home img{
+        width: 350px;
+    }
+}
+@media screen and (max-width:450px) {
+    .home h1{
+        font-size: 20px;
+        width: 100%;
+    }
+    .home p{
+        width: 100%;
+        font-size: 11px;
+    }
+    .home .btn{
+        transform: scale(0.8);
+    }
+    .home img{
+        width: 250px;
+    }
+}
